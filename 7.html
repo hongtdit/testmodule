@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <body>
 <button onclick="checkDate()">Test</button>
@@ -19,6 +19,29 @@ function checkDate(){
     	document.getElementById("demo").innerHTML = "Ngày không hợp lệ";
     }
     
+}
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="checkDate()">Test</button>
+<p id="demo"></p>
+<script>
+function checkDate(){
+  let text = prompt("Nhập ngày với định dạng yyyy-mm-dd");
+  let date = new Date(text);
+  if (isNaN(date)) {
+    document.getElementById("demo").innerHTML = "Ngày không hợp lệ";
+  }
+  if (date.toISOString().substr(0,10) === text) {
+    date.setDate(date.getDate() + 1);
+    document.getElementById("demo").innerHTML = date.toISOString().substr(0,10);
+  } else {
+    document.getElementById("demo").innerHTML = "Ngày không hợp lệ";
+  }    
 }
 </script>
 
